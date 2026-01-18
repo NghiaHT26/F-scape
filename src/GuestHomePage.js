@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Users, DollarSign, Home, MapPin, Calendar, ArrowRight } from "lucide-react";
+import { Users, ArrowRight } from "lucide-react";
 
 // Component Skeleton để giả lập hiệu ứng loading (Lazy Loading UI)
 const RoomSkeleton = () => (
