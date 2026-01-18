@@ -36,13 +36,13 @@ export default function GuestHomePage() {
   useEffect(() => {
     const fetchRooms = async () => {
       try {
-        const res = await fetch("/api/rooms");
+        const res = await fetch("https://studentaccommodation.onrender.com/api/rooms");
         const data = await res.json();
         setRooms(data);
       } catch (error) {
         console.error("Fetch failed:", error);
       } finally {
-        setTimeout(() => setLoading(false), 1500); // Giả lập delay để thấy hiệu ứng skeleton
+        setTimeout(() => setLoading(false), 1);
       }
     };
     fetchRooms();
@@ -81,7 +81,6 @@ export default function GuestHomePage() {
           ) : (
             rooms.map((room) => (
               <div key={room.id} style={styles.card} className="room-card">
-                {/* Giả định có ảnh phòng, nếu không có sẽ lấy placeholder */}
                 <img 
                   src={room.image || `https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=300&h=300&fit=crop`} 
                   alt={room.name} 
